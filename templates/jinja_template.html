@@ -1,0 +1,12 @@
+{% extends "laytout.html" %}
+{% block content %}
+    <h1>Movies Report</h1>
+        <p>Date {{context.date}}</p>
+        <p>Movies seen in the last 30 days: {{context.movies|length}}</p>
+        <ol>
+            {% for movie in context.movies %}
+            <li>{{movie}}</li>
+            {% endfor %}
+        </ol>
+        <p>Total minutes: {{context.total_minutes}} </p>
+{% endblock content %}
